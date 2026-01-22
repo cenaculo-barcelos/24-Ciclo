@@ -56,8 +56,8 @@ window.addEventListener('scroll', () => {
 
 // ===== ANIMAÇÃO BRAVE CONTROLADA POR SCROLL =====
 const braveAnimation = {
-  totalFrames: 165, // Total de frames que tens
-  framePath: 'imagens/brave-anim/ezgif-frame-',
+  totalFrames: 120, // Total de frames que tens
+  framePath: 'imagens/brave-animation/ezgif-frame-',
   frameExtension: '.jpg',
   scrollRange: 2000, // Distância de scroll (em pixels) para a animação completa
   currentFrame: 0,
