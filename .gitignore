@@ -1,0 +1,22 @@
+# Docker
+.dockerignore
+
+# Node modules (se usares no futuro)
+node_modules/
+npm-debug.log
+package-lock.json
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporários
+*.tmp
+*.temp
