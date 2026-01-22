@@ -255,4 +255,16 @@ body {
     font-size: 1.1rem;
   }
 }
+
+/* ===== ANIMAÇÃO BRAVE ===== */
+#brave-animation-container {
+  will-change: opacity, visibility;
+}
+
+#brave-animation-img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: auto;
+}
   

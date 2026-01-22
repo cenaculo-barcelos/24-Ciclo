@@ -20,3 +20,18 @@ Thumbs.db
 # Temporários
 *.tmp
 *.temp
+
+# Excluir tudo exceto a pasta do projeto
+/*
+!index.html
+!styles.css
+!main.js
+!Dockerfile
+!nginx.conf
+!.gitignore
+!run.ps1
+!run-dev.ps1
+!setup-git.ps1
+!commit-and-push.ps1
+!imagens/
+!fonts/
