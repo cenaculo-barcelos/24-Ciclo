@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>24º Ciclo do Cenáculo - Barcelos</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="imagens/cen.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="imagens/cen.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="imagens/cen.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=MedievalSharp&display=swap" rel="stylesheet">
@@ -13,8 +16,11 @@
     <nav class="navbar">
       <div class="navbar-container">
         <div class="navbar-logo">
-          <span class="logo-text">24º Cenáculo</span>
-          <span class="logo-subtitle">Barcelos</span>
+          <img src="imagens/cen.png" alt="Cenáculo" class="logo-icon" />
+          <div class="logo-text-container">
+            <span class="logo-text">24º Cenáculo</span>
+            <span class="logo-subtitle">Barcelos</span>
+          </div>
         </div>
         
         <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu">
@@ -28,13 +34,13 @@
             <a href="#topo" class="navbar-link">Início</a>
           </li>
           <li class="navbar-item">
-            <a href="#imaginario" class="navbar-link">Imaginário</a>
+            <a href="#imaginario" class="navbar-link">O que é?</a>
           </li>
           <li class="navbar-item">
-            <a href="#equipa" class="navbar-link">Equipa</a>
+            <a href="#equipa" class="navbar-link">Equipa Projeto</a>
           </li>
           <li class="navbar-item">
-            <a href="#horarios" class="navbar-link">Horários</a>
+            <a href="#horarios" class="navbar-link">Merch</a>
           </li>
           <li class="navbar-item">
             <a href="#fotos" class="navbar-link">Fotos</a>
@@ -45,6 +51,23 @@
         </ul>
       </div>
     </nav>
+
+    <!-- Textos para mobile -->
+    <div class="mobile-welcome" id="mobileWelcome">
+      <p class="welcome-text">Bem-vindo ao 24º Ciclo do Cenáculo de Barcelos</p>
+    </div>
+
+    <div class="mobile-scroll-hint" id="mobileScrollHint">
+      <p class="hint-text">Desliza para descobrir mais</p>
+      <div class="scroll-arrow">↓</div>
+    </div>
+
+    <!-- Secção após animação -->
+    <section class="ola-section" id="olaSection">
+      <div class="ola-container">
+        <img src="imagens/ola.png" alt="Olá" class="ola-image" />
+      </div>
+    </section>
 
     <script src="main.js"></script>
   </body>

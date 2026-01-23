@@ -3,6 +3,12 @@ const navbarToggle = document.getElementById('navbarToggle');
 const navbarMenu = document.getElementById('navbarMenu');
 const navbarLinks = document.querySelectorAll('.navbar-link');
 
+// Função para fechar menu
+function closeMenu() {
+  navbarToggle.classList.remove('active');
+  navbarMenu.classList.remove('active');
+}
+
 // Toggle menu mobile
 navbarToggle.addEventListener('click', () => {
   navbarToggle.classList.toggle('active');
@@ -11,10 +17,7 @@ navbarToggle.addEventListener('click', () => {
 
 // Fechar menu ao clicar num link
 navbarLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    navbarToggle.classList.remove('active');
-    navbarMenu.classList.remove('active');
-  });
+  link.addEventListener('click', closeMenu);
 });
 
 // Scroll suave para as secções
@@ -87,6 +90,8 @@ function initBraveAnimation() {
     -webkit-backdrop-filter: blur(8px);
     transition: opacity 0.8s ease, visibility 0.8s ease;
     pointer-events: none;
+    opacity: 1;
+    visibility: visible;
   `;
   
   // Criar imagem
@@ -99,7 +104,7 @@ function initBraveAnimation() {
     filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.8));
     image-rendering: high-quality;
   `;
-  img.alt = 'Brave Animation';
+  img.alt = '';
   
   container.appendChild(img);
   document.body.prepend(container);
@@ -107,8 +112,26 @@ function initBraveAnimation() {
   braveAnimation.container = container;
   braveAnimation.img = img;
   
-  // Carregar primeiro frame
-  updateBraveFrame(0);
+  // Pré-carregar primeiro frame antes de mostrar
+  const firstFrameNumber = String(1).padStart(3, '0');
+  const firstFramePath = `${braveAnimation.framePath}${firstFrameNumber}${braveAnimation.frameExtension}`;
+  
+  const preloadImg = new Image();
+  preloadImg.onload = () => {
+    // Quando o primeiro frame carregar, mostrar tudo
+    img.src = preloadImg.src;
+    img.style.display = 'block';
+    container.style.opacity = '1';
+    container.style.visibility = 'visible';
+    braveAnimation.loadedFrames.add(0);
+  };
+  
+  preloadImg.onerror = () => {
+    // Se houver erro, esconder tudo
+    container.style.display = 'none';
+  };
+  
+  preloadImg.src = firstFramePath;
 }
 
 // Atualizar frame baseado no scroll
@@ -126,8 +149,9 @@ function updateBraveFrame(scrollPosition) {
     braveAnimation.currentFrame = frameIndex;
     const frameNumber = String(frameIndex + 1).padStart(3, '0');
     const img = braveAnimation.img;
+    const container = braveAnimation.container;
     
-    if (img) {
+    if (img && container) {
       const framePath = `${braveAnimation.framePath}${frameNumber}${braveAnimation.frameExtension}`;
       
       // Pré-carregar frame para evitar flicker
@@ -138,6 +162,7 @@ function updateBraveFrame(scrollPosition) {
           braveAnimation.loadedFrames.add(frameIndex);
         };
         preloadImg.onerror = () => {
+          // Se houver erro, manter frame anterior
           console.warn(`Frame ${frameNumber} não encontrado`);
         };
         preloadImg.src = framePath;
@@ -161,6 +186,34 @@ function updateBraveFrame(scrollPosition) {
       braveAnimation.container.style.visibility = 'visible';
     }
   }
+  
+  // Desvanecer textos mobile EXATAMENTE como a animação
+  const welcome = document.getElementById('mobileWelcome');
+  const hint = document.getElementById('mobileScrollHint');
+  
+  if (welcome && hint) {
+    // Usar EXATAMENTE a mesma lógica da animação
+    let textOpacity = 1;
+    
+    if (scrollPosition > scrollRange) {
+      textOpacity = 0;
+      welcome.style.visibility = 'hidden';
+      hint.style.visibility = 'hidden';
+    } else {
+      welcome.style.visibility = 'visible';
+      hint.style.visibility = 'visible';
+      
+      // Desvanecer gradualmente dos 70% até 100%
+      if (scrollPosition > scrollRange * 0.7) {
+        const fadeStart = scrollRange * 0.7;
+        const fadeEnd = scrollRange;
+        textOpacity = Math.max(0, 1 - ((scrollPosition - fadeStart) / (fadeEnd - fadeStart)));
+      }
+    }
+    
+    welcome.style.opacity = textOpacity;
+    hint.style.opacity = textOpacity;
+  }
 }
 
 // Event listener para scroll (otimizado)
@@ -182,3 +235,5 @@ if (document.readyState === 'loading') {
 } else {
   initBraveAnimation();
 }
+
+// Secção ola está sempre visível, não precisa de controlo de scroll
