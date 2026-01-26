@@ -178,12 +178,14 @@ function updateBraveFrame(scrollPosition) {
     if (braveAnimation.container) {
       braveAnimation.container.style.opacity = '0';
       braveAnimation.container.style.visibility = 'hidden';
+      braveAnimation.container.style.pointerEvents = 'none';
     }
   } else if (scrollPosition <= scrollRange && !braveAnimation.isVisible) {
     braveAnimation.isVisible = true;
     if (braveAnimation.container) {
       braveAnimation.container.style.opacity = '1';
       braveAnimation.container.style.visibility = 'visible';
+      braveAnimation.container.style.pointerEvents = 'none';
     }
   }
   
@@ -229,11 +231,149 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
-// Inicializar quando a página carregar
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initBraveAnimation);
-} else {
-  initBraveAnimation();
+// Secção ola está sempre visível, não precisa de controlo de scroll
+
+// ===== TIMELINE DE CICLOS ANTERIORES =====
+function initTimeline() {
+  const timelineContainer = document.getElementById('timelineItems');
+  if (!timelineContainer) return;
+
+  // Gerar ciclos do 23º ao 12º (do mais recente para o mais antigo)
+  for (let i = 23; i >= 12; i--) {
+    const cicloItem = document.createElement('div');
+    cicloItem.className = 'timeline-item';
+    cicloItem.dataset.ciclo = i;
+    
+    const cicloNumber = i;
+    const currentYear = new Date().getFullYear();
+    const cicloYear = currentYear - (24 - cicloNumber); // Ano aproximado do ciclo
+    
+    cicloItem.innerHTML = `
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <img src="imagens/Ciclos/${cicloNumber}ciclo.jpg" 
+             alt="${cicloNumber}º Ciclo" 
+             class="timeline-image"
+             onerror="this.src='imagens/cen.png'; this.style.opacity='0.3';">
+        <div class="timeline-number">${cicloNumber}º Ciclo</div>
+        <div class="timeline-year">${cicloYear}</div>
+      </div>
+    `;
+    
+    timelineContainer.appendChild(cicloItem);
+  }
+
+  // Observar elementos para animação ao scroll
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  // Observar todos os itens da timeline
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  timelineItems.forEach(item => {
+    observer.observe(item);
+  });
+
+  // Observar ciclos para controlar visibilidade do botão "Voltar ao topo"
+  const ciclo21 = document.querySelector('.timeline-item[data-ciclo="21"]');
+  const ciclo22 = document.querySelector('.timeline-item[data-ciclo="22"]');
+  const ciclo23 = document.querySelector('.timeline-item[data-ciclo="23"]');
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  const ciclosSection = document.getElementById('ciclosAnteriores');
+  
+  if (ciclo21 && backToTopBtn && ciclosSection) {
+    const buttonObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const cicloNum = parseInt(entry.target.dataset.ciclo);
+        
+        if (entry.isIntersecting) {
+          // Mostrar botão quando 21º ciclo está visível
+          if (cicloNum === 21) {
+            backToTopBtn.classList.add('visible');
+          }
+          // Esconder botão quando 22º ou 23º ciclo estão visíveis
+          if (cicloNum === 22 || cicloNum === 23) {
+            backToTopBtn.classList.remove('visible');
+          }
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.3
+    });
+    
+    // Observar os três ciclos
+    buttonObserver.observe(ciclo21);
+    if (ciclo22) buttonObserver.observe(ciclo22);
+    if (ciclo23) buttonObserver.observe(ciclo23);
+    
+    // Função para scroll animado passando pelos ciclos
+    function scrollToTopAnimated() {
+      const navbarHeight = document.querySelector('.navbar').offsetHeight;
+      const targetPosition = ciclosSection.offsetTop - navbarHeight;
+      const currentPosition = window.pageYOffset || document.documentElement.scrollTop;
+      const distance = targetPosition - currentPosition;
+      const duration = 2000; // 2 segundos
+      const startTime = performance.now();
+      
+      // Obter todos os ciclos em ordem (do 21º ao 23º)
+      const ciclos = Array.from(document.querySelectorAll('.timeline-item'))
+        .filter(item => {
+          const cicloNum = parseInt(item.dataset.ciclo);
+          return cicloNum >= 21 && cicloNum <= 23;
+        })
+        .sort((a, b) => parseInt(b.dataset.ciclo) - parseInt(a.dataset.ciclo)); // Do 23º ao 21º
+      
+      function animateScroll(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Easing function para movimento suave
+        const easeInOutCubic = progress < 0.5
+          ? 4 * progress * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        
+        const currentScroll = currentPosition + (distance * easeInOutCubic);
+        window.scrollTo(0, currentScroll);
+        
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        }
+      }
+      
+      requestAnimationFrame(animateScroll);
+    }
+    
+    // Event listener para voltar ao topo com animação
+    backToTopBtn.addEventListener('click', scrollToTopAnimated);
+  }
 }
 
-// Secção ola está sempre visível, não precisa de controlo de scroll
+// Inicializar tudo quando a página carregar
+function initAll() {
+  initBraveAnimation();
+  initTimeline();
+  
+  // Atualizar animação com posição inicial de scroll
+  setTimeout(() => {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    updateBraveFrame(scrollPosition);
+  }, 100);
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initAll);
+} else {
+  initAll();
+}
