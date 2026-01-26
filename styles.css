@@ -520,14 +520,21 @@ body {
     margin-top: 2200px; /* Um pouco mais de espaço no mobile */
     padding-bottom: 2rem;
     padding-top: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0;
+    padding-right: 0;
     overflow: visible;
   }
   
   .ola-container {
-    padding: 1.5rem;
+    padding: 2rem 1rem;
     overflow: visible;
+    width: 100%;
+  }
+  
+  .ola-image {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
   }
 }
 
@@ -540,8 +547,9 @@ body {
   align-items: center;
   gap: 1rem;
   overflow: visible;
-  padding: 2rem;
+  padding: 0;
   box-sizing: border-box;
+  position: relative;
 }
 
 .ola-zoom-hint {
@@ -596,15 +604,6 @@ body {
   animation: fadeInUp 1s ease;
   display: block;
   position: relative;
-}
-
-/* Ajuste para mobile - garantir que as sombras não são cortadas */
-@media (max-width: 768px) {
-  .ola-image {
-    margin: 2rem;
-    width: calc(100% - 4rem);
-    max-width: calc(100% - 4rem);
-  }
 }
 
 /* Reduzir tamanho da imagem no desktop para metade */
