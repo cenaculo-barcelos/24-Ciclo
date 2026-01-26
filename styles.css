@@ -511,14 +511,23 @@ body {
   padding: 4rem 2rem;
   z-index: 1;
   margin-top: 2500px; /* Espaço para a animação + mais espaço */
+  overflow: visible;
 }
 
 /* No mobile, espaço médio */
 @media (max-width: 768px) {
   .ola-section {
     margin-top: 2200px; /* Um pouco mais de espaço no mobile */
-    padding-bottom: 0;
+    padding-bottom: 2rem;
     padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow: visible;
+  }
+  
+  .ola-container {
+    padding: 1.5rem;
+    overflow: visible;
   }
 }
 
@@ -530,6 +539,9 @@ body {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  overflow: visible;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
 .ola-zoom-hint {
@@ -582,6 +594,17 @@ body {
   object-fit: contain;
   filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.5));
   animation: fadeInUp 1s ease;
+  display: block;
+  position: relative;
+}
+
+/* Ajuste para mobile - garantir que as sombras não são cortadas */
+@media (max-width: 768px) {
+  .ola-image {
+    margin: 2rem;
+    width: calc(100% - 4rem);
+    max-width: calc(100% - 4rem);
+  }
 }
 
 /* Reduzir tamanho da imagem no desktop para metade */
@@ -633,7 +656,7 @@ body {
 @media (max-width: 768px) {
   .welcome-message-section {
     padding: 0 1rem;
-    margin-top: -10rem;
+    margin-top: -8rem;
     margin-bottom: 2rem;
   }
   
@@ -641,6 +664,11 @@ body {
     font-size: 2.5rem;
     padding: 0;
     margin: 0;
+    text-shadow: 
+      0 0 5px rgba(243, 167, 56, 0.3),
+      0 0 10px rgba(243, 167, 56, 0.2),
+      0 0 15px rgba(243, 167, 56, 0.15),
+      0 2px 5px rgba(243, 167, 56, 0.25);
   }
 }
 
@@ -699,7 +727,7 @@ body {
 @media (max-width: 768px) {
   .ciclos-section {
     padding: 0 1rem;
-    margin-top: -2rem;
+    margin-top: 0rem;
   }
   
   .ciclos-title {
@@ -707,6 +735,11 @@ body {
     padding: 0;
     margin-bottom: 0;
     margin-top: 0;
+    text-shadow: 
+      0 0 5px rgba(243, 167, 56, 0.3),
+      0 0 10px rgba(243, 167, 56, 0.2),
+      0 0 15px rgba(243, 167, 56, 0.15),
+      0 2px 5px rgba(243, 167, 56, 0.25);
   }
   
   .ciclos-subtitle {

@@ -248,10 +248,14 @@ function initTimeline() {
     const currentYear = new Date().getFullYear();
     const cicloYear = currentYear - (24 - cicloNumber); // Ano aproximado do ciclo
     
+    // Para o ciclo 22, usar .JPG (maiúsculas), para os outros .jpg (minúsculas)
+    const extension = cicloNumber === 22 ? 'JPG' : 'jpg';
+    const imgPath = `imagens/Ciclos/${cicloNumber}ciclo.${extension}`;
+    
     cicloItem.innerHTML = `
       <div class="timeline-dot"></div>
       <div class="timeline-content">
-        <img src="imagens/Ciclos/${cicloNumber}ciclo.jpg" 
+        <img src="${imgPath}" 
              alt="${cicloNumber}º Ciclo" 
              class="timeline-image"
              onerror="this.src='imagens/cen.png'; this.style.opacity='0.3';">
