@@ -366,14 +366,19 @@ function initTimeline() {
 
 // Inicializar tudo quando a página carregar
 function initAll() {
-  initBraveAnimation();
+  // Só mostrar a animação Brave na página principal
+  if (document.body.classList.contains('page-home')) {
+    initBraveAnimation();
+
+    // Atualizar animação com posição inicial de scroll
+    setTimeout(() => {
+      const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      updateBraveFrame(scrollPosition);
+    }, 100);
+  }
+
+  // Timeline e restantes comportamentos só vão atuar se os elementos existirem
   initTimeline();
-  
-  // Atualizar animação com posição inicial de scroll
-  setTimeout(() => {
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-    updateBraveFrame(scrollPosition);
-  }, 100);
 }
 
 if (document.readyState === 'loading') {
