@@ -657,7 +657,7 @@ body {
   .welcome-message-section {
     padding: 0 1rem;
     margin-top: -8rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   
   .welcome-title {
@@ -1177,6 +1177,72 @@ body {
   
   .decoration-ornament {
     font-size: 1.2rem;
+  }
+}
+
+/* ===== PÁGINAS EM CONSTRUÇÃO ===== */
+.construction-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  z-index: 1;
+  margin-top: 90px; /* Espaço para a navbar */
+}
+
+.construction-container {
+  text-align: center;
+  max-width: 800px;
+  padding: 3rem 2rem;
+}
+
+.construction-title {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #f7c66b;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  text-shadow: 
+    0 0 10px rgba(243, 167, 56, 0.6),
+    0 0 20px rgba(243, 167, 56, 0.4),
+    0 0 30px rgba(243, 167, 56, 0.3),
+    0 2px 10px rgba(243, 167, 56, 0.5);
+}
+
+.construction-text {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .construction-section {
+    margin-top: 80px;
+    padding: 2rem 1rem;
+  }
+  
+  .construction-container {
+    padding: 2rem 1rem;
+  }
+  
+  .construction-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 
+      0 0 5px rgba(243, 167, 56, 0.3),
+      0 0 10px rgba(243, 167, 56, 0.2),
+      0 0 15px rgba(243, 167, 56, 0.15),
+      0 2px 5px rgba(243, 167, 56, 0.25);
+  }
+  
+  .construction-text {
+    font-size: 1.5rem;
   }
 }
   
