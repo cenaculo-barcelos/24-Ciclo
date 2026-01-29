@@ -24,6 +24,11 @@ Thumbs.db
 # Excluir tudo exceto a pasta do projeto
 /*
 !index.html
+!o-que-e.html
+!hino.html
+!fotos.html
+!merch.html
+!equipa-projeto.html
 !styles.css
 !main.js
 !Dockerfile

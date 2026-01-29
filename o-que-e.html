@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O que é? - 24º Ciclo do Cenáculo</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="imagens/cen.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="imagens/cen.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="imagens/cen.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <div class="navbar-logo">
+          <img src="imagens/cen.png" alt="Cenáculo" class="logo-icon" />
+          <div class="logo-text-container">
+            <span class="logo-text">24º Cenáculo</span>
+            <span class="logo-subtitle">Barcelos</span>
+          </div>
+        </div>
+        
+        <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        
+        <ul class="navbar-menu" id="navbarMenu">
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link">Início</a>
+          </li>
+          <li class="navbar-item">
+            <a href="o-que-e.html" class="navbar-link">O que é?</a>
+          </li>
+          <li class="navbar-item">
+            <a href="equipa-projeto.html" class="navbar-link">Equipa Projeto</a>
+          </li>
+          <li class="navbar-item">
+            <a href="merch.html" class="navbar-link">Merch</a>
+          </li>
+          <li class="navbar-item">
+            <a href="fotos.html" class="navbar-link">Fotos</a>
+          </li>
+          <li class="navbar-item">
+            <a href="hino.html" class="navbar-link">Hino</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="content-section">
+      <div class="content-container">
+        <h1 class="page-title">O que é o Cenáculo?</h1>
+        <p class="page-subtitle">"VIVE, PARTILHA Y AVANÇA!"</p>
+        
+        <div class="text-content">
+          <p>O Cenáculo é uma ferramenta educativa do Corpo Nacional de Escutas (CNE), criada em 2001 pela então SNIV (Secretaria Nacional da IV Secção). Consiste num fórum de Caminheiros e Companheiros, com função consultiva, onde se pretende criar um espaço de debate de temas de interesse para os jovens adultos da IV secção.</p>
+          
+          <p>Esta atividade realiza-se a nível local e a nível nacional:</p>
+          <ul>
+            <li>O Cenáculo Local realiza-se em quase todas as Regiões e Núcleos do CNE;</li>
+            <li>O Cenáculo Nacional é onde participam os representantes de cada Núcleo/Região eleitos localmente.</li>
+          </ul>
+          
+          <p>Desde o seu início, o Cenáculo tem-se difundido pelo país, tendo hoje um papel afirmado na IV secção. O seu crescimento tem sido evidente ao longo dos Ciclos: desde os 36 participantes no 1º Ciclo de Cenáculo Nacional até aos mais de 3049 participantes em 39 Cenáculos de Núcleo e Região em 2019.</p>
+          
+          <p>A organização de cada Cenáculo, tanto ao nível local como nacional, é da inteira responsabilidade de um conjunto de Caminheiros e Companheiros - a Equipa de Projeto - cujo trabalho é acompanhado por um dirigente Observador.</p>
+          
+          <p>O Cenáculo é uma oportunidade educativa, tanto para aqueles que estão envolvidos na sua organização, como também para todos os que nele participam ativamente, contribuindo para que os jovens adultos da associação adquiram competências para a sua vida em sociedade.</p>
+        </div>
+
+        <div class="hino-section">
+          <h2 class="hino-title">Hino Cenáculo</h2>
+          
+          <div class="hino-lyrics">
+            <p>Um Homem Novo vai nascer</p>
+            <p>Neste dia onde tudo vai mudar</p>
+            <p>Tens um mundo pra transformar</p>
+            <p>E B.P. para te orientar</p>
+            <br>
+            <p>Nas costas tens a mochila</p>
+            <p>Cheia de segredos pra desvendar</p>
+            <p>Na partilha vais viver</p>
+            <p>Novas histórias terás para contar</p>
+            <br>
+            <p>Vive, partilha e avança</p>
+            <p>Sem medo do amanhã</p>
+            <p>Segue Cristo e B.P.</p>
+            <p>E um Homem Novo serás (BIS)</p>
+            <br>
+            <p>Nas tuas mãos tens o mundo</p>
+            <p>Tens muito para ensinar</p>
+            <p>Há um novo rumo a seguir</p>
+            <p>Novos sonhos para alcançar</p>
+            <br>
+            <p>Vive, partilha e avança</p>
+            <p>Sem medo do amanhã</p>
+            <p>Segue Cristo e B.P.</p>
+            <p>E um Homem Novo serás (BIS)</p>
+          </div>
+
+          <div class="audio-player-container">
+            <audio id="hinoAudio" src="audio/hino.mp4"></audio>
+            <div class="audio-player">
+              <div class="audio-player-controls">
+                <button class="play-pause-btn" id="playPauseBtn" aria-label="Play/Pause">
+                  <span class="play-icon">▶</span>
+                  <span class="pause-icon" style="display: none;">⏸</span>
+                </button>
+                <div class="volume-control">
+                  <span class="volume-icon" id="volumeIcon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" fill="currentColor"/>
+                    </svg>
+                  </span>
+                  <div class="volume-slider-wrapper">
+                    <div class="volume-slider-fill" id="volumeSliderFill"></div>
+                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="1" aria-label="Volume">
+                  </div>
+                </div>
+              </div>
+              <div class="progress-container">
+                <div class="progress-bar" id="progressBar">
+                  <div class="progress-fill" id="progressFill"></div>
+                  <div class="progress-handle" id="progressHandle"></div>
+                </div>
+                <div class="time-display">
+                  <span id="currentTime">0:00</span>
+                  <span id="duration">0:00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="main.js"></script>
+    <script>
+      // Audio player functionality
+      const audio = document.getElementById('hinoAudio');
+      const playPauseBtn = document.getElementById('playPauseBtn');
+      const progressBar = document.getElementById('progressBar');
+      const progressFill = document.getElementById('progressFill');
+      const currentTimeSpan = document.getElementById('currentTime');
+      const durationSpan = document.getElementById('duration');
+      const playIcon = playPauseBtn.querySelector('.play-icon');
+      const pauseIcon = playPauseBtn.querySelector('.pause-icon');
+
+      function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${mins}:${secs.toString().padStart(2, '0')}`;
+      }
+
+      const progressHandle = document.getElementById('progressHandle');
+      let isDragging = false;
+
+      function updateProgress() {
+        if (!isDragging && audio.duration) {
+          const progress = (audio.currentTime / audio.duration) * 100;
+          progressFill.style.width = progress + '%';
+          progressHandle.style.left = progress + '%';
+          currentTimeSpan.textContent = formatTime(audio.currentTime);
+        }
+      }
+
+      function updateDuration() {
+        durationSpan.textContent = formatTime(audio.duration);
+      }
+
+      const volumeSlider = document.getElementById('volumeSlider');
+      const volumeSliderFill = document.getElementById('volumeSliderFill');
+      const volumeIcon = document.getElementById('volumeIcon');
+      
+      // Função para atualizar ícone e barra de volume
+      function updateVolumeDisplay(volume) {
+        // Atualizar barra de preenchimento
+        volumeSliderFill.style.width = (volume * 100) + '%';
+        
+        // Atualizar ícone SVG
+        const svg = volumeIcon.querySelector('svg');
+        const path = svg.querySelector('path');
+        
+        if (volume === 0) {
+          // Ícone mudo
+          path.setAttribute('d', 'M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z');
+        } else if (volume < 0.5) {
+          // Ícone volume baixo
+          path.setAttribute('d', 'M18.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 9v6h4l5 5V4L9 9H5z');
+        } else {
+          // Ícone volume alto
+          path.setAttribute('d', 'M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z');
+        }
+      }
+      
+      // Controlo de volume
+      volumeSlider.addEventListener('input', (e) => {
+        audio.volume = e.target.value;
+        updateVolumeDisplay(audio.volume);
+      });
+      
+      // Inicializar display de volume
+      updateVolumeDisplay(audio.volume);
+
+      playPauseBtn.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play();
+          playIcon.style.display = 'none';
+          pauseIcon.style.display = 'inline';
+        } else {
+          audio.pause();
+          playIcon.style.display = 'inline';
+          pauseIcon.style.display = 'none';
+        }
+      });
+
+      // Função para atualizar posição do áudio
+      function setAudioPosition(e) {
+        const rect = progressBar.getBoundingClientRect();
+        const percent = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        audio.currentTime = percent * audio.duration;
+        progressFill.style.width = (percent * 100) + '%';
+        progressHandle.style.left = (percent * 100) + '%';
+        currentTimeSpan.textContent = formatTime(audio.currentTime);
+      }
+
+      // Clicar na barra de progresso
+      progressBar.addEventListener('click', setAudioPosition);
+
+      // Arrastar o handle
+      progressHandle.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        e.preventDefault();
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+          setAudioPosition(e);
+        }
+      });
+
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+
+      // Suporte para touch (mobile)
+      progressHandle.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        e.preventDefault();
+      });
+
+      document.addEventListener('touchmove', (e) => {
+        if (isDragging && e.touches.length > 0) {
+          const touch = e.touches[0];
+          const fakeEvent = {
+            clientX: touch.clientX
+          };
+          setAudioPosition(fakeEvent);
+        }
+      });
+
+      document.addEventListener('touchend', () => {
+        isDragging = false;
+      });
+
+      audio.addEventListener('loadedmetadata', () => {
+        updateDuration();
+        progressHandle.style.left = '0%';
+      });
+      audio.addEventListener('timeupdate', updateProgress);
+      audio.addEventListener('ended', () => {
+        playIcon.style.display = 'inline';
+        pauseIcon.style.display = 'none';
+        progressFill.style.width = '0%';
+        progressHandle.style.left = '0%';
+        currentTimeSpan.textContent = '0:00';
+      });
+    </script>
+  </body>
+</html>
