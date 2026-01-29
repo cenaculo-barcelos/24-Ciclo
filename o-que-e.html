@@ -104,7 +104,11 @@
           </div>
 
           <div class="audio-player-container">
-            <audio id="hinoAudio" src="audio/hino.mp4"></audio>
+            <p class="audio-error-msg" id="audioErrorMsg" style="display: none; color: #c9a227; margin-bottom: 0.5rem; font-size: 0.9rem;"></p>
+            <audio id="hinoAudio" preload="metadata">
+              <source src="audio/hino.mp3" type="audio/mpeg">
+              <source src="audio/hino.m4a" type="audio/mp4">
+            </audio>
             <div class="audio-player">
               <div class="audio-player-controls">
                 <button class="play-pause-btn" id="playPauseBtn" aria-label="Play/Pause">
@@ -170,7 +174,9 @@
       }
 
       function updateDuration() {
-        durationSpan.textContent = formatTime(audio.duration);
+        if (Number.isFinite(audio.duration) && audio.duration > 0) {
+          durationSpan.textContent = formatTime(audio.duration);
+        }
       }
 
       const volumeSlider = document.getElementById('volumeSlider');
@@ -207,11 +213,37 @@
       // Inicializar display de volume
       updateVolumeDisplay(audio.volume);
 
+      const audioErrorMsg = document.getElementById('audioErrorMsg');
+      function showAudioError(text) {
+        if (audioErrorMsg) {
+          audioErrorMsg.textContent = text;
+          audioErrorMsg.style.display = 'block';
+        }
+      }
+      function hideAudioError() {
+        if (audioErrorMsg) audioErrorMsg.style.display = 'none';
+      }
+
+      audio.addEventListener('error', () => {
+        showAudioError('Ficheiro de áudio não encontrado. Coloque o ficheiro hino.mp3 na pasta audio/ e atualize a página.');
+      });
+      audio.addEventListener('loadeddata', hideAudioError);
+
       playPauseBtn.addEventListener('click', () => {
         if (audio.paused) {
-          audio.play();
-          playIcon.style.display = 'none';
-          pauseIcon.style.display = 'inline';
+          const p = audio.play();
+          if (p && typeof p.then === 'function') {
+            p.then(() => {
+              hideAudioError();
+              playIcon.style.display = 'none';
+              pauseIcon.style.display = 'inline';
+            }).catch(() => {
+              showAudioError('Não foi possível reproduzir. Verifique se o ficheiro hino.mp3 está na pasta audio/.');
+            });
+          } else {
+            playIcon.style.display = 'none';
+            pauseIcon.style.display = 'inline';
+          }
         } else {
           audio.pause();
           playIcon.style.display = 'inline';
@@ -221,6 +253,7 @@
 
       // Função para atualizar posição do áudio
       function setAudioPosition(e) {
+        if (!Number.isFinite(audio.duration) || audio.duration <= 0) return;
         const rect = progressBar.getBoundingClientRect();
         const percent = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
         audio.currentTime = percent * audio.duration;

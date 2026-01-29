@@ -40,3 +40,5 @@ Thumbs.db
 !commit-and-push.ps1
 !imagens/
 !fonts/
+!audio/
+!audio/*
