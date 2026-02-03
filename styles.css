@@ -1435,6 +1435,10 @@ body {
   position: relative;
   z-index: 2;
   margin: 0;
+  touch-action: none;
+  min-height: 44px;
+  margin-top: -18px;
+  padding-top: 18px;
 }
 
 .volume-slider-fill {
@@ -1454,23 +1458,44 @@ body {
 .volume-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 12px;
-  height: 12px;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  min-height: 24px;
   background: linear-gradient(90deg, #f3a738, #f7c66b);
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(243, 167, 56, 0.8), 0 2px 4px rgba(0, 0, 0, 0.3);
-  margin-top: -2px;
+  margin-top: -8px;
 }
 
 .volume-slider::-moz-range-thumb {
-  width: 12px;
-  height: 12px;
+  width: 24px;
+  height: 24px;
   background: linear-gradient(90deg, #f3a738, #f7c66b);
   border-radius: 50%;
   cursor: pointer;
   border: none;
   box-shadow: 0 0 10px rgba(243, 167, 56, 0.8), 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (pointer: fine) {
+  .volume-slider::-webkit-slider-thumb {
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
+    min-height: 12px;
+    margin-top: -2px;
+  }
+  .volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+  }
+  .volume-slider {
+    min-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+  }
 }
 
 .play-pause-btn {
@@ -1479,6 +1504,8 @@ body {
   border-radius: 0;
   width: auto;
   height: auto;
+  min-width: 44px;
+  min-height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1491,6 +1518,13 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+}
+
+.play-pause-btn .play-icon svg,
+.play-pause-btn .pause-icon svg {
+  width: 2rem;
+  height: 2rem;
+  display: block;
 }
 
 .play-pause-btn:hover {
