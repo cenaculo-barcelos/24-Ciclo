@@ -52,13 +52,210 @@
       </div>
     </nav>
 
-    <section class="construction-section">
-      <div class="construction-container">
-        <h1 class="construction-title">Equipa Projeto</h1>
-        <p class="construction-text">Em construção</p>
+    <section class="equipa-section">
+      <div class="equipa-container">
+        <h1 class="equipa-page-title">Equipa Projeto</h1>
+        <p class="equipa-page-subtitle">A equipa por detrás do 24º Cenáculo de Barcelos</p>
+
+        <!-- Carrossel de departamentos -->
+        <div class="equipa-carousel-wrapper">
+          <button class="equipa-carousel-btn equipa-carousel-btn-prev" id="equipaCarouselPrev" aria-label="Departamento anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <div class="equipa-carousel-track-wrap">
+            <div class="equipa-carousel" id="equipaCarousel">
+              <article class="equipa-dept-card" data-dept="comunicacao">
+                <div class="equipa-dept-img-wrap">
+                  <img src="imagens/equipa/comunicacao-grupo.jpg" alt="Comunicação" onerror="this.src='imagens/cen.png';this.alt='Placeholder';" />
+                  <span class="equipa-dept-name">Comunicação</span>
+                </div>
+              </article>
+              <article class="equipa-dept-card" data-dept="forum">
+                <div class="equipa-dept-img-wrap">
+                  <img src="imagens/equipa/forum-grupo.jpg" alt="Fórum" onerror="this.src='imagens/cen.png';this.alt='Placeholder';" />
+                  <span class="equipa-dept-name">Fórum</span>
+                </div>
+              </article>
+              <article class="equipa-dept-card" data-dept="observador">
+                <div class="equipa-dept-img-wrap">
+                  <img src="imagens/equipa/observador-grupo.jpg" alt="Observador" onerror="this.src='imagens/cen.png';this.alt='Placeholder';" />
+                  <span class="equipa-dept-name">Observador</span>
+                </div>
+              </article>
+              <article class="equipa-dept-card equipa-dept-card-active" data-dept="coordenacao">
+                <div class="equipa-dept-img-wrap">
+                  <img src="imagens/equipa/coordenacao-grupo.jpg" alt="Coordenação" onerror="this.src='imagens/cen.png';this.alt='Placeholder';" />
+                  <span class="equipa-dept-name">Coordenação</span>
+                </div>
+              </article>
+              <article class="equipa-dept-card" data-dept="logistica">
+                <div class="equipa-dept-img-wrap">
+                  <img src="imagens/equipa/logistica-grupo.jpg" alt="Logística" onerror="this.src='imagens/cen.png';this.alt='Placeholder';" />
+                  <span class="equipa-dept-name">Logística</span>
+                </div>
+              </article>
+              <article class="equipa-dept-card" data-dept="animacao">
+                <div class="equipa-dept-img-wrap">
+                  <img src="imagens/equipa/animacao-grupo.jpg" alt="Animação" onerror="this.src='imagens/cen.png';this.alt='Placeholder';" />
+                  <span class="equipa-dept-name">Animação</span>
+                </div>
+              </article>
+              <article class="equipa-dept-card" data-dept="embaixadora">
+                <div class="equipa-dept-img-wrap">
+                  <img src="imagens/equipa/embaixadora-grupo.jpg" alt="Embaixadora" onerror="this.src='imagens/cen.png';this.alt='Placeholder';" />
+                  <span class="equipa-dept-name">Embaixadora</span>
+                </div>
+              </article>
+            </div>
+          </div>
+          <button class="equipa-carousel-btn equipa-carousel-btn-next" id="equipaCarouselNext" aria-label="Próximo departamento">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+
+        <!-- Título da secção de membros -->
+        <h2 class="equipa-members-title" id="equipaMembersTitle">Coordenação</h2>
+
+        <!-- Grid de membros do departamento selecionado -->
+        <div class="equipa-members" id="equipaMembers">
+          <!-- Preenchido por JavaScript conforme o departamento selecionado -->
+        </div>
       </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="imagens/cen.png" alt="Cenáculo" class="footer-logo-img" />
+            <div class="footer-text">
+              <h3 class="footer-title">24º Ciclo do Cenáculo</h3>
+              <p class="footer-subtitle">Barcelos</p>
+            </div>
+          </div>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/cenaculobcl/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162 0 3.403 2.759 6.162 6.162 6.162 3.403 0 6.162-2.759 6.162-6.162 0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4 2.209 0 4 1.791 4 4 0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="#f7c66b"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100064930500962" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#f7c66b"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copyright">© 2025 24º Ciclo do Cenáculo de Barcelos</p>
+        </div>
+        <div class="footer-end-decoration">
+          <div class="decoration-line"></div>
+          <div class="decoration-ornament">✦</div>
+          <div class="decoration-line"></div>
+        </div>
+      </div>
+    </footer>
+
     <script src="main.js"></script>
+    <script>
+      (function() {
+        var DEPT_NAMES = {
+          comunicacao: 'Comunicação',
+          forum: 'Fórum',
+          observador: 'Observador',
+          coordenacao: 'Coordenação',
+          logistica: 'Logística',
+          animacao: 'Animação',
+          embaixadora: 'Embaixadora'
+        };
+        var MEMBERS = {
+          coordenacao: [
+            { name: 'Andreia', slug: 'andreia' },
+            { name: 'Duda', slug: 'duda' }
+          ],
+          comunicacao: [
+            { name: 'Tiago', slug: 'tiago' },
+            { name: 'Mariana', slug: 'mariana' },
+            { name: 'Kika', slug: 'kika' },
+            { name: 'Jorge', slug: 'jorge' }
+          ],
+          animacao: [
+            { name: 'Chico', slug: 'chico' },
+            { name: 'Maria', slug: 'maria' },
+            { name: 'Lara', slug: 'lara' },
+            { name: 'Chicão', slug: 'chicao' }
+          ],
+          logistica: [
+            { name: 'Pinto', slug: 'pinto' },
+            { name: 'Rafa', slug: 'rafa' },
+            { name: 'André', slug: 'andre' },
+            { name: 'Anjo', slug: 'anjo' }
+          ],
+          embaixadora: [
+            { name: 'Bruna', slug: 'bruna' }
+          ],
+          observador: [
+            { name: 'Arantes', slug: 'arantes' }
+          ],
+          forum: [
+            { name: 'Miguel', slug: 'miguel' },
+            { name: 'Mara', slug: 'mara' }
+          ]
+        };
+
+        var carousel = document.getElementById('equipaCarousel');
+        var prevBtn = document.getElementById('equipaCarouselPrev');
+        var nextBtn = document.getElementById('equipaCarouselNext');
+        var membersContainer = document.getElementById('equipaMembers');
+        var membersTitle = document.getElementById('equipaMembersTitle');
+        var cards = document.querySelectorAll('.equipa-dept-card');
+        var cardWidth = 220;
+        var gap = 20;
+        var scrollAmount = cardWidth + gap;
+
+        function setActiveDept(deptId) {
+          cards.forEach(function(card) {
+            card.classList.toggle('equipa-dept-card-active', card.getAttribute('data-dept') === deptId);
+          });
+          membersTitle.textContent = DEPT_NAMES[deptId] || deptId;
+          var list = MEMBERS[deptId] || [];
+          if (list.length === 0) {
+            membersContainer.innerHTML = '<p class="equipa-members-empty">Sem membros listados para este departamento.</p>';
+            return;
+          }
+          membersContainer.innerHTML = list.map(function(m) {
+            var imgPath = 'imagens/equipa/' + m.slug + '.png';
+            return '<div class="equipa-member-card">' +
+              '<div class="equipa-member-img-wrap">' +
+              '<img src="' + imgPath + '" alt="' + m.name + '" onerror="this.src=\'imagens/cen.png\';" />' +
+              '</div>' +
+              '<span class="equipa-member-name">' + m.name + '</span>' +
+              '</div>';
+          }).join('');
+        }
+
+        cards.forEach(function(card) {
+          card.addEventListener('click', function() {
+            var dept = this.getAttribute('data-dept');
+            setActiveDept(dept);
+          });
+        });
+
+        if (prevBtn && carousel) {
+          prevBtn.addEventListener('click', function() {
+            carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+          });
+        }
+        if (nextBtn && carousel) {
+          nextBtn.addEventListener('click', function() {
+            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+          });
+        }
+
+        setActiveDept('coordenacao');
+      })();
+    </script>
   </body>
 </html>

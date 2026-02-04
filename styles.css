@@ -1246,6 +1246,248 @@ body {
   }
 }
 
+/* ===== PÁGINA EQUIPA PROJETO ===== */
+.equipa-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 1rem 4rem;
+  z-index: 1;
+  margin-top: 90px;
+}
+
+.equipa-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.equipa-page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #f7c66b;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 15px rgba(243, 167, 56, 0.5);
+}
+
+.equipa-page-subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.equipa-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.equipa-carousel-btn {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(247, 198, 107, 0.6);
+  background: rgba(0, 0, 0, 0.4);
+  color: #f7c66b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.equipa-carousel-btn:hover {
+  background: rgba(243, 167, 56, 0.2);
+  border-color: #f7c66b;
+  transform: scale(1.05);
+}
+
+.equipa-carousel-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.equipa-carousel-track-wrap {
+  flex: 1;
+  overflow: hidden;
+}
+
+.equipa-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0.5rem 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.equipa-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.equipa-carousel::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.equipa-carousel::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #f3a738, #f7c66b);
+  border-radius: 4px;
+}
+
+.equipa-dept-card {
+  flex: 0 0 200px;
+  scroll-snap-align: center;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.equipa-dept-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.equipa-dept-card-active {
+  border-color: #f7c66b;
+  box-shadow: 0 0 20px rgba(243, 167, 56, 0.4);
+}
+
+.equipa-dept-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.equipa-dept-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.equipa-dept-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  color: #f7c66b;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+.equipa-members-title {
+  font-size: 1.5rem;
+  color: #f7c66b;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.08em;
+}
+
+.equipa-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.equipa-member-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 220px;
+}
+
+.equipa-member-img-wrap {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(247, 198, 107, 0.5);
+  margin-bottom: 0.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.equipa-member-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.equipa-member-name {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.equipa-members-empty {
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .equipa-section {
+    margin-top: 80px;
+    padding: 1.5rem 0.75rem 3rem;
+  }
+
+  .equipa-page-title {
+    font-size: 1.75rem;
+  }
+
+  .equipa-page-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .equipa-carousel-wrapper {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .equipa-carousel-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .equipa-carousel-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .equipa-dept-card {
+    flex: 0 0 160px;
+  }
+
+  .equipa-members {
+    gap: 1.25rem;
+  }
+
+  .equipa-member-img-wrap {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 /* ===== PÁGINA "O QUE É?" ===== */
 .content-section {
   position: relative;
