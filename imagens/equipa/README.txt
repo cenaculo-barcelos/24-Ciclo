@@ -1,13 +1,13 @@
 Coloque aqui as fotos da Equipa Projeto.
 
-FOTOS DE GRUPO (por departamento):
-- comunicacao-grupo.jpg   (Comunicação)
-- forum-grupo.jpg         (Fórum)
-- observador-grupo.jpg    (Observador)
-- coordenacao-grupo.jpg   (Coordenação)
-- logistica-grupo.jpg     (Logística)
-- animacao-grupo.jpg      (Animação)
-- embaixadora-grupo.jpg   (Embaixadora)
+FOTOS DE GRUPO (PNG por departamento):
+- comunicacao.png   (Comunicação)
+- forum.png         (Fórum)
+- observador.png    (Observador)
+- coordenacao.png   (Coordenação)
+- logistica.png     (Logística)
+- animacao.png      (Animação)
+- embaixadora.png   (Embaixadora)
 
 FOTOS INDIVIDUAIS (PNG sem fundo, nome = slug abaixo):
 - andreia.png, duda.png           (Coordenação)
