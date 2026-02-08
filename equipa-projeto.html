@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=MedievalSharp&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="page-equipa-projeto">
     <nav class="navbar">
       <div class="navbar-container">
         <div class="navbar-logo">
@@ -43,10 +43,7 @@
             <a href="merch.html" class="navbar-link">Merch</a>
           </li>
           <li class="navbar-item">
-            <a href="fotos.html" class="navbar-link">Fotos</a>
-          </li>
-          <li class="navbar-item">
-            <a href="hino.html" class="navbar-link">Hino</a>
+            <a href="forum.html" class="navbar-link">Fórum</a>
           </li>
         </ul>
       </div>
@@ -119,6 +116,12 @@
         <!-- Grid de membros do departamento selecionado -->
         <div class="equipa-members" id="equipaMembers">
           <!-- Preenchido por JavaScript conforme o departamento selecionado -->
+        </div>
+
+        <!-- O que faz? (texto da equipa selecionada) -->
+        <div class="equipa-roles" id="equipaRoles">
+          <h2 class="equipa-roles-title">O que faz?</h2>
+          <p class="equipa-role-desc" id="equipaRoleDesc"></p>
         </div>
       </div>
     </section>
@@ -215,6 +218,16 @@
           ]
         };
 
+        var DEPT_ROLES = {
+          coordenacao: 'A <span class="equipa-role-highlight">Coordenação</span> assegura a direção e a articulação de toda a Equipa Projeto, garantindo que o ciclo decorre de forma coerente e em sintonia com os objetivos definidos.',
+          comunicacao: 'O departamento de <span class="equipa-role-highlight">Comunicação</span> gere a presença nas redes sociais e assegura uma identidade visual coerente ao longo do ciclo. Desenvolve a imagem das comunicações, alinhando-a com o imaginário definido. É ainda responsável por garantir uma comunicação clara e eficaz entre a Equipa Projeto e os Clãs.',
+          forum: 'A equipa de <span class="equipa-role-highlight">Fórum</span> seleciona os temas a debater, escolhe moderadores e oradores e define a forma como os assuntos serão trabalhados ao longo do ciclo. Dinamiza os trabalhos de tribo, regista as conclusões das problemáticas discutidas e assegura uma postura adequada durante os debates. Em conjunto com todos os participantes, contribui também para a elaboração da Carta de Cenáculo.',
+          observador: 'O <span class="equipa-role-highlight">Observador</span> é o dirigente responsável por acompanhar os trabalhos do ciclo em articulação com a Junta de Núcleo. Apoia e orienta os representantes ao longo do processo, ajudando a ultrapassar dificuldades que possam surgir.',
+          logistica: 'O departamento de <span class="equipa-role-highlight">Logística</span> gere o orçamento e os recursos financeiros do ciclo, assegurando despesas como espaço, alimentação, materiais e transporte. Seleciona e adapta os locais às necessidades do evento, prevendo sempre alternativas para possíveis imprevistos. Trata ainda dos patrocínios e da relação com patrocinadores, garantindo uma organização eficiente dos espaços e atividades.',
+          animacao: 'A equipa de <span class="equipa-role-highlight">Animação</span> é responsável por criar e desenvolver um imaginário que acompanhe todo o ciclo. Cabe-lhe dinamizar o Fogo de Conselho, proporcionando momentos significativos e envolventes. Deve também promover a participação ativa dos caminheiros, através de dinâmicas, aplausos e momentos de oração que reforcem o ambiente de cada atividade.',
+          embaixadora: 'A <span class="equipa-role-highlight">Embaixadora</span> assegura a ligação entre a Equipa Projeto local e a nacional. Colabora na organização do ciclo, apoiando a definição da sua estrutura e a elaboração de documentos orientadores. Tem ainda a responsabilidade de divulgar e incentivar a participação no tema da auscultação nacional.'
+        };
+
         var carousel = document.getElementById('equipaCarousel');
         var prevBtn = document.getElementById('equipaCarouselPrev');
         var nextBtn = document.getElementById('equipaCarouselNext');
@@ -232,6 +245,13 @@
             card.classList.toggle('equipa-dept-card-active', card.getAttribute('data-dept') === deptId);
           });
           membersTitle.textContent = DEPT_NAMES[deptId] || deptId;
+          var roleDescEl = document.getElementById('equipaRoleDesc');
+          var rolesBlock = document.getElementById('equipaRoles');
+          if (roleDescEl && rolesBlock) {
+            var roleText = DEPT_ROLES[deptId] || '';
+            roleDescEl.innerHTML = roleText;
+            rolesBlock.style.display = roleText ? 'block' : 'none';
+          }
           var list = MEMBERS[deptId] || [];
           if (list.length === 0) {
             membersContainer.innerHTML = '<p class="equipa-members-empty">Sem membros listados para este departamento.</p>';

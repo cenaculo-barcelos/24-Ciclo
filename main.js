@@ -238,8 +238,8 @@ function initTimeline() {
   const timelineContainer = document.getElementById('timelineItems');
   if (!timelineContainer) return;
 
-  // Gerar ciclos do 23º ao 12º (do mais recente para o mais antigo)
-  for (let i = 23; i >= 12; i--) {
+  // Gerar ciclos do 23º ao 10º (do mais recente para o mais antigo)
+  for (let i = 23; i >= 10; i--) {
     const cicloItem = document.createElement('div');
     cicloItem.className = 'timeline-item';
     cicloItem.dataset.ciclo = i;
@@ -248,8 +248,8 @@ function initTimeline() {
     const currentYear = new Date().getFullYear();
     const cicloYear = currentYear - (24 - cicloNumber); // Ano aproximado do ciclo
     
-    // Para o ciclo 22, usar .JPG (maiúsculas), para os outros .jpg (minúsculas)
-    const extension = cicloNumber === 22 ? 'JPG' : 'jpg';
+    // Ciclos 10 e 11: .png; ciclo 22: .JPG; restantes: .jpg
+    const extension = (cicloNumber === 10 || cicloNumber === 11) ? 'png' : (cicloNumber === 22 ? 'JPG' : 'jpg');
     const imgPath = `imagens/Ciclos/${cicloNumber}ciclo.${extension}`;
     
     cicloItem.innerHTML = `
