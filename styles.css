@@ -1441,6 +1441,7 @@ body {
   gap: 0.2rem;
   background: rgba(255, 255, 255, 0.06);
   text-align: center;
+  overflow: hidden;
 }
 
 .forum-card-front-has-image {
@@ -1456,6 +1457,29 @@ body {
   background: rgba(0, 0, 0, 0.45);
   border-radius: 10px;
   pointer-events: none;
+}
+
+/* Bola do orador encaixada no canto, com um bocado de fora */
+.forum-card-front-orador {
+  position: absolute;
+  top: -1.25rem;
+  right: -1.25rem;
+  z-index: 2;
+}
+
+.forum-card-front-orador-visible {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid rgba(247, 198, 107, 0.5);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.forum-card-front-orador-visible img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .forum-card-front-has-image .forum-zone-name-line1,

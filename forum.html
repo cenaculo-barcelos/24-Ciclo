@@ -60,6 +60,7 @@
           <div class="forum-card" data-theme="0">
             <div class="forum-card-inner">
               <div class="forum-card-front">
+                <div class="forum-card-front-orador"></div>
                 <span class="forum-zone-name-line1"></span>
                 <span class="forum-zone-name-line2"></span>
               </div>
@@ -81,6 +82,7 @@
           <div class="forum-card" data-theme="1">
             <div class="forum-card-inner">
               <div class="forum-card-front">
+                <div class="forum-card-front-orador"></div>
                 <span class="forum-zone-name-line1"></span>
                 <span class="forum-zone-name-line2"></span>
               </div>
@@ -102,6 +104,7 @@
           <div class="forum-card" data-theme="2">
             <div class="forum-card-inner">
               <div class="forum-card-front">
+                <div class="forum-card-front-orador"></div>
                 <span class="forum-zone-name-line1"></span>
                 <span class="forum-zone-name-line2"></span>
               </div>
@@ -123,6 +126,7 @@
           <div class="forum-card" data-theme="3">
             <div class="forum-card-inner">
               <div class="forum-card-front">
+                <div class="forum-card-front-orador"></div>
                 <span class="forum-zone-name-line1"></span>
                 <span class="forum-zone-name-line2"></span>
               </div>
@@ -144,6 +148,7 @@
           <div class="forum-card" data-theme="4">
             <div class="forum-card-inner">
               <div class="forum-card-front">
+                <div class="forum-card-front-orador"></div>
                 <span class="forum-zone-name-line1"></span>
                 <span class="forum-zone-name-line2"></span>
               </div>
@@ -165,6 +170,7 @@
           <div class="forum-card" data-theme="5">
             <div class="forum-card-inner">
               <div class="forum-card-front">
+                <div class="forum-card-front-orador"></div>
                 <span class="forum-zone-name-line1"></span>
                 <span class="forum-zone-name-line2"></span>
               </div>
@@ -186,6 +192,7 @@
           <div class="forum-card" data-theme="6">
             <div class="forum-card-inner">
               <div class="forum-card-front">
+                <div class="forum-card-front-orador"></div>
                 <span class="forum-zone-name-line1"></span>
                 <span class="forum-zone-name-line2"></span>
               </div>
@@ -207,6 +214,7 @@
           <div class="forum-card" data-theme="7">
             <div class="forum-card-inner">
               <div class="forum-card-front">
+                <div class="forum-card-front-orador"></div>
                 <span class="forum-zone-name-line1"></span>
                 <span class="forum-zone-name-line2"></span>
               </div>
@@ -268,9 +276,9 @@
     <script>
       (function() {
         var FORUM_TEMAS = [
-          { title: 'A Floresta Selvagem', backTitle: 'Floresta Selvagem', frontImage: 'imagens/forum/oradores/floresta-selvagem.png', subtitle: 'Diminuição da envolvência do escutismo com a Natureza', orador: 'Cristina Pinheiro', oradorSlug: 'cristina-pinheiro', tags: ['Natureza'] },
+          { title: 'A Floresta Selvagem', backTitle: 'Floresta Selvagem', frontImage: 'imagens/forum/oradores/floresta-selvagem.png', frontOradorImage: 'imagens/forum/oradores/cristina.jpeg', frontOradorAlt: 'Cristina Pinheiro', subtitle: 'Diminuição da envolvência do escutismo com a Natureza', orador: 'Cristina Pinheiro', oradorSlug: 'cristina-pinheiro', tags: ['Natureza'] },
           { title: 'A Sala dos Mapas', backTitle: 'Sala dos Mapas', frontImage: 'imagens/forum/oradores/sala-mapas.png', subtitle: 'Dificuldades das novas etapas da vida', orador: 'Paulo Pinto', oradorSlug: 'paulo-pinto', tags: ['Vida adulta'] },
-          { title: 'Encruzilhada dos Fogos Fátuos', backTitle: 'Encruzilhada Fogos Fátuos', backTags: ['Caminhos'], frontImage: 'imagens/forum/oradores/encruzilhada.png', subtitle: 'A Vara Bifurcada — Os diferentes caminhos que podemos escolher', orador: 'Carolina Figueiredo', oradorSlug: 'carolina-figueiredo', tags: ['Escolhas', 'Caminhos'] },
+          { title: 'Encruzilhada dos Fogos Fátuos', backTitle: 'Encruzilhada Fogos Fátuos', backTags: ['Caminhos'], frontImage: 'imagens/forum/oradores/encruzilhada.png', frontOradorImage: 'imagens/forum/oradores/carolina.jpeg', frontOradorAlt: 'Carolina Figueiredo', subtitle: 'A Vara Bifurcada — Os diferentes caminhos que podemos escolher', orador: 'Carolina Figueiredo', oradorSlug: 'carolina-figueiredo', tags: ['Escolhas', 'Caminhos'] },
           { title: 'A Sala da Tapeçaria', frontImage: 'imagens/forum/oradores/tapeçaria.png', subtitle: 'Como lidar com imprevistos médicos numa atividade', orador: 'Sergio Paulo', oradorSlug: 'sergio-paulo', tags: ['Saúde'] },
           { title: 'Coragem de Discordar', frontImage: 'imagens/forum/oradores/coragem.png', subtitle: 'Temas ainda tabus na sociedade', orador: 'Luis Loureiro', oradorSlug: 'luis-loureiro', tags: ['Tabus'] },
           { title: 'Os Portões do Castelo', backTitle: 'Portões do Castelo', frontImage: 'imagens/forum/oradores/portoes.png', subtitle: 'O início e o fim desta grande Jornada que é a IV', orador: 'Carolina Gandarela', oradorSlug: 'carolina-gandarela', tags: ['IV Secção'] },
@@ -296,6 +304,15 @@
           if (t.frontImage) {
             front.style.backgroundImage = 'url(' + t.frontImage + ')';
             front.classList.add('forum-card-front-has-image');
+          }
+          var frontOrador = front.querySelector('.forum-card-front-orador');
+          if (t.frontOradorImage && frontOrador) {
+            var img = document.createElement('img');
+            img.src = t.frontOradorImage;
+            img.alt = t.frontOradorAlt || '';
+            img.onerror = function() { this.src = 'imagens/cen.png'; this.style.opacity = '0.6'; };
+            frontOrador.appendChild(img);
+            frontOrador.classList.add('forum-card-front-orador-visible');
           }
           var back = card.querySelector('.forum-card-back');
           back.querySelector('.forum-panel-title').textContent = t.backTitle || t.title;
