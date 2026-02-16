@@ -81,6 +81,12 @@ body {
 }
 
 /* Logo */
+.navbar-logo-link {
+  display: inline-flex;
+  text-decoration: none;
+  color: inherit;
+}
+
 .navbar-logo {
   display: flex;
   flex-direction: row;
