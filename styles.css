@@ -1422,6 +1422,12 @@ body {
   transform: rotateY(180deg);
 }
 
+/* No mobile, a frente por vezes continua visível por cima do verso; escondê-la de forma explícita */
+.forum-card-flipped .forum-card-front {
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .forum-card-front,
 .forum-card-back {
   position: absolute;
