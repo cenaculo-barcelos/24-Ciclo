@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fórum - 24º Ciclo do Cenáculo</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="imagens/cen.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="imagens/cen.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="imagens/cen.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page-forum">
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="index.html" class="navbar-logo-link" aria-label="Ir para a página inicial">
+          <div class="navbar-logo">
+            <img src="imagens/cen.png" alt="Cenáculo" class="logo-icon" />
+            <div class="logo-text-container">
+              <span class="logo-text">24º Cenáculo</span>
+              <span class="logo-subtitle">Barcelos</span>
+            </div>
+          </div>
+        </a>
+        
+        <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        
+        <ul class="navbar-menu" id="navbarMenu">
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link">Início</a>
+          </li>
+          <li class="navbar-item">
+            <a href="o-que-e.html" class="navbar-link">O que é?</a>
+          </li>
+          <li class="navbar-item">
+            <a href="equipa-projeto.html" class="navbar-link">Equipa Projeto</a>
+          </li>
+          <li class="navbar-item">
+            <a href="merch.html" class="navbar-link">Merch</a>
+          </li>
+          <li class="navbar-item">
+            <a href="forum.html" class="navbar-link">Fórum</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="forum-section">
+      <div class="forum-container">
+        <h1 class="forum-page-title">Fórum</h1>
+        <p class="forum-page-intro">Temas em fóruns rotativos — clica num tema para o cartão rodar e ver orador e descrição.</p>
+
+        <div class="forum-map" id="forumMap">
+          <div class="forum-card" data-theme="0">
+            <div class="forum-card-inner">
+              <div class="forum-card-front">
+                <span class="forum-zone-name-line1"></span>
+                <span class="forum-zone-name-line2"></span>
+              </div>
+              <div class="forum-card-back">
+                <div class="forum-card-back-header">
+                  <h2 class="forum-panel-title"></h2>
+                  <div class="forum-panel-tags forum-tags-corner"></div>
+                </div>
+                <div class="forum-card-back-content">
+                  <p class="forum-panel-subtitle"></p>
+                  <div class="forum-panel-orador">
+                    <div class="forum-orador-photo-wrap"><img src="" alt="" onerror="this.src='imagens/cen.png';this.style.opacity='0.5';" /></div>
+                    <span class="forum-orador-name"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="forum-card" data-theme="1">
+            <div class="forum-card-inner">
+              <div class="forum-card-front">
+                <span class="forum-zone-name-line1"></span>
+                <span class="forum-zone-name-line2"></span>
+              </div>
+              <div class="forum-card-back">
+                <div class="forum-card-back-header">
+                  <h2 class="forum-panel-title"></h2>
+                  <div class="forum-panel-tags forum-tags-corner"></div>
+                </div>
+                <div class="forum-card-back-content">
+                  <p class="forum-panel-subtitle"></p>
+                  <div class="forum-panel-orador">
+                    <div class="forum-orador-photo-wrap"><img src="" alt="" onerror="this.src='imagens/cen.png';this.style.opacity='0.5';" /></div>
+                    <span class="forum-orador-name"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="forum-card" data-theme="2">
+            <div class="forum-card-inner">
+              <div class="forum-card-front">
+                <span class="forum-zone-name-line1"></span>
+                <span class="forum-zone-name-line2"></span>
+              </div>
+              <div class="forum-card-back">
+                <div class="forum-card-back-header">
+                  <h2 class="forum-panel-title"></h2>
+                  <div class="forum-panel-tags forum-tags-corner"></div>
+                </div>
+                <div class="forum-card-back-content">
+                  <p class="forum-panel-subtitle"></p>
+                  <div class="forum-panel-orador">
+                    <div class="forum-orador-photo-wrap"><img src="" alt="" onerror="this.src='imagens/cen.png';this.style.opacity='0.5';" /></div>
+                    <span class="forum-orador-name"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="forum-card" data-theme="3">
+            <div class="forum-card-inner">
+              <div class="forum-card-front">
+                <span class="forum-zone-name-line1"></span>
+                <span class="forum-zone-name-line2"></span>
+              </div>
+              <div class="forum-card-back">
+                <div class="forum-card-back-header">
+                  <h2 class="forum-panel-title"></h2>
+                  <div class="forum-panel-tags forum-tags-corner"></div>
+                </div>
+                <div class="forum-card-back-content">
+                  <p class="forum-panel-subtitle"></p>
+                  <div class="forum-panel-orador">
+                    <div class="forum-orador-photo-wrap"><img src="" alt="" onerror="this.src='imagens/cen.png';this.style.opacity='0.5';" /></div>
+                    <span class="forum-orador-name"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="forum-card" data-theme="4">
+            <div class="forum-card-inner">
+              <div class="forum-card-front">
+                <span class="forum-zone-name-line1"></span>
+                <span class="forum-zone-name-line2"></span>
+              </div>
+              <div class="forum-card-back">
+                <div class="forum-card-back-header">
+                  <h2 class="forum-panel-title"></h2>
+                  <div class="forum-panel-tags forum-tags-corner"></div>
+                </div>
+                <div class="forum-card-back-content">
+                  <p class="forum-panel-subtitle"></p>
+                  <div class="forum-panel-orador">
+                    <div class="forum-orador-photo-wrap"><img src="" alt="" onerror="this.src='imagens/cen.png';this.style.opacity='0.5';" /></div>
+                    <span class="forum-orador-name"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="forum-card" data-theme="5">
+            <div class="forum-card-inner">
+              <div class="forum-card-front">
+                <span class="forum-zone-name-line1"></span>
+                <span class="forum-zone-name-line2"></span>
+              </div>
+              <div class="forum-card-back">
+                <div class="forum-card-back-header">
+                  <h2 class="forum-panel-title"></h2>
+                  <div class="forum-panel-tags forum-tags-corner"></div>
+                </div>
+                <div class="forum-card-back-content">
+                  <p class="forum-panel-subtitle"></p>
+                  <div class="forum-panel-orador">
+                    <div class="forum-orador-photo-wrap"><img src="" alt="" onerror="this.src='imagens/cen.png';this.style.opacity='0.5';" /></div>
+                    <span class="forum-orador-name"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="forum-card" data-theme="6">
+            <div class="forum-card-inner">
+              <div class="forum-card-front">
+                <span class="forum-zone-name-line1"></span>
+                <span class="forum-zone-name-line2"></span>
+              </div>
+              <div class="forum-card-back">
+                <div class="forum-card-back-header">
+                  <h2 class="forum-panel-title"></h2>
+                  <div class="forum-panel-tags forum-tags-corner"></div>
+                </div>
+                <div class="forum-card-back-content">
+                  <p class="forum-panel-subtitle"></p>
+                  <div class="forum-panel-orador">
+                    <div class="forum-orador-photo-wrap"><img src="" alt="" onerror="this.src='imagens/cen.png';this.style.opacity='0.5';" /></div>
+                    <span class="forum-orador-name"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="forum-card" data-theme="7">
+            <div class="forum-card-inner">
+              <div class="forum-card-front">
+                <span class="forum-zone-name-line1"></span>
+                <span class="forum-zone-name-line2"></span>
+              </div>
+              <div class="forum-card-back">
+                <div class="forum-card-back-header">
+                  <h2 class="forum-panel-title"></h2>
+                  <div class="forum-panel-tags forum-tags-corner"></div>
+                </div>
+                <div class="forum-card-back-content">
+                  <p class="forum-panel-subtitle"></p>
+                  <div class="forum-panel-orador">
+                    <div class="forum-orador-photo-wrap"><img src="" alt="" onerror="this.src='imagens/cen.png';this.style.opacity='0.5';" /></div>
+                    <span class="forum-orador-name"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <img src="imagens/cen.png" alt="Cenáculo" class="footer-logo-img" />
+            <div class="footer-text">
+              <h3 class="footer-title">24º Ciclo do Cenáculo</h3>
+              <p class="footer-subtitle">Barcelos</p>
+            </div>
+          </div>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/cenaculobcl/" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162 0 3.403 2.759 6.162 6.162 6.162 3.403 0 6.162-2.759 6.162-6.162 0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4 2.209 0 4 1.791 4 4 0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="#f7c66b"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100064930500962" class="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#f7c66b"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copyright">© 2025 24º Ciclo do Cenáculo de Barcelos</p>
+        </div>
+        <div class="footer-end-decoration">
+          <div class="decoration-line"></div>
+          <div class="decoration-ornament">✦</div>
+          <div class="decoration-line"></div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+      (function() {
+        var FORUM_TEMAS = [
+          { title: 'A Floresta Selvagem', backTitle: 'Floresta Selvagem', frontImage: 'imagens/forum/oradores/floresta-selvagem.png', subtitle: 'Diminuição da envolvência do escutismo com a Natureza', orador: 'Cristina Pinheiro', oradorSlug: 'cristina-pinheiro', tags: ['Natureza'] },
+          { title: 'A Sala dos Mapas', backTitle: 'Sala dos Mapas', frontImage: 'imagens/forum/oradores/sala-mapas.png', subtitle: 'Dificuldades das novas etapas da vida', orador: 'Paulo Pinto', oradorSlug: 'paulo-pinto', tags: ['Vida adulta'] },
+          { title: 'Encruzilhada dos Fogos Fátuos', backTitle: 'Encruzilhada Fogos Fátuos', backTags: ['Caminhos'], frontImage: 'imagens/forum/oradores/encruzilhada.png', subtitle: 'A Vara Bifurcada — Os diferentes caminhos que podemos escolher', orador: 'Carolina Figueiredo', oradorSlug: 'carolina-figueiredo', tags: ['Escolhas', 'Caminhos'] },
+          { title: 'A Sala da Tapeçaria', frontImage: 'imagens/forum/oradores/tapeçaria.png', subtitle: 'Como lidar com imprevistos médicos numa atividade', orador: 'Sergio Paulo', oradorSlug: 'sergio-paulo', tags: ['Saúde'] },
+          { title: 'Coragem de Discordar', frontImage: 'imagens/forum/oradores/coragem.png', subtitle: 'Temas ainda tabus na sociedade', orador: 'Luis Loureiro', oradorSlug: 'luis-loureiro', tags: ['Tabus'] },
+          { title: 'Os Portões do Castelo', backTitle: 'Portões do Castelo', frontImage: 'imagens/forum/oradores/portoes.png', subtitle: 'O início e o fim desta grande Jornada que é a IV', orador: 'Carolina Gandarela', oradorSlug: 'carolina-gandarela', tags: ['IV Secção'] },
+          { title: 'O Peso da Coroa', frontImage: 'imagens/forum/oradores/peso-coroa.png', subtitle: 'Limitações da Religião', orador: 'Padre Pedro', oradorSlug: 'padre-pedro', tags: ['Fé'] },
+          { title: 'O Teu Próprio Caminho', frontImage: 'imagens/forum/oradores/caminho.png', subtitle: 'Atividades para Caminheiros', orador: 'A confirmar', oradorSlug: '', tags: ['Atividades'] }
+        ];
+
+        var cards = document.querySelectorAll('.forum-card');
+
+        function splitTitleTwoLines(title) {
+          var i = title.lastIndexOf(' ');
+          if (i <= 0) return [title, ''];
+          return [title.slice(0, i), title.slice(i + 1)];
+        }
+
+        function fillCardBack(card, index) {
+          var t = FORUM_TEMAS[index];
+          if (!t) return;
+          var front = card.querySelector('.forum-card-front');
+          var lines = splitTitleTwoLines(t.title);
+          front.querySelector('.forum-zone-name-line1').textContent = lines[0];
+          front.querySelector('.forum-zone-name-line2').textContent = lines[1];
+          if (t.frontImage) {
+            front.style.backgroundImage = 'url(' + t.frontImage + ')';
+            front.classList.add('forum-card-front-has-image');
+          }
+          var back = card.querySelector('.forum-card-back');
+          back.querySelector('.forum-panel-title').textContent = t.backTitle || t.title;
+          back.querySelector('.forum-panel-subtitle').textContent = t.subtitle;
+          back.querySelector('.forum-orador-name').textContent = t.orador;
+          var img = back.querySelector('.forum-orador-photo-wrap img');
+          if (t.oradorSlug) {
+            img.src = 'imagens/forum/oradores/' + t.oradorSlug + '.jpg';
+            img.alt = t.orador;
+            img.style.opacity = '';
+          } else {
+            img.src = 'imagens/cen.png';
+            img.alt = 'Orador a confirmar';
+            img.style.opacity = '0.5';
+          }
+          var tags = t.backTags || t.tags;
+          back.querySelector('.forum-tags-corner').innerHTML = tags.map(function(tag) { return '<span class="forum-tag">' + tag + '</span>'; }).join('');
+        }
+
+        function flipCard(card, flip) {
+          if (flip) card.classList.add('forum-card-flipped');
+          else card.classList.remove('forum-card-flipped');
+        }
+
+        cards.forEach(function(card, i) {
+          fillCardBack(card, i);
+          var inner = card.querySelector('.forum-card-inner');
+          inner.addEventListener('click', function() {
+            if (card.classList.contains('forum-card-flipped')) flipCard(card, false);
+            else flipCard(card, true);
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
