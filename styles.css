@@ -1422,9 +1422,13 @@ body {
   transform: rotateY(180deg);
 }
 
-/* No mobile, a frente por vezes continua visível por cima do verso; escondê-la de forma explícita */
+/* No mobile, a frente por vezes continua visível por cima do verso; escondê-la só após a rotação acabar */
+.forum-card-front {
+  transition: visibility 0s linear;
+}
 .forum-card-flipped .forum-card-front {
   visibility: hidden;
+  transition-delay: 0.6s;
   pointer-events: none;
 }
 
