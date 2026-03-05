@@ -39,6 +39,9 @@
             <a href="o-que-e.html" class="navbar-link">O que é?</a>
           </li>
           <li class="navbar-item">
+            <a href="hino.html" class="navbar-link">Hino</a>
+          </li>
+          <li class="navbar-item">
             <a href="equipa-projeto.html" class="navbar-link">Equipa Projeto</a>
           </li>
           <li class="navbar-item">
@@ -72,78 +75,6 @@
           <p>O Cenáculo é uma oportunidade educativa, tanto para aqueles que estão envolvidos na sua organização, como também para todos os que nele participam ativamente, contribuindo para que os jovens adultos da associação adquiram competências para a sua vida em sociedade.</p>
         </div>
 
-        <div class="hino-section">
-          <h2 class="hino-title">Hino Cenáculo</h2>
-          
-          <div class="hino-lyrics">
-            <p>Um Homem Novo vai nascer</p>
-            <p>Neste dia onde tudo vai mudar</p>
-            <p>Tens um mundo pra transformar</p>
-            <p>E B.P. para te orientar</p>
-            <br>
-            <p>Nas costas tens a mochila</p>
-            <p>Cheia de segredos pra desvendar</p>
-            <p>Na partilha vais viver</p>
-            <p>Novas histórias terás para contar</p>
-            <br>
-            <p>Vive, partilha e avança</p>
-            <p>Sem medo do amanhã</p>
-            <p>Segue Cristo e B.P.</p>
-            <p>E um Homem Novo serás (BIS)</p>
-            <br>
-            <p>Nas tuas mãos tens o mundo</p>
-            <p>Tens muito para ensinar</p>
-            <p>Há um novo rumo a seguir</p>
-            <p>Novos sonhos para alcançar</p>
-            <br>
-            <p>Vive, partilha e avança</p>
-            <p>Sem medo do amanhã</p>
-            <p>Segue Cristo e B.P.</p>
-            <p>E um Homem Novo serás (BIS)</p>
-          </div>
-
-          <div class="audio-player-container">
-            <p class="audio-error-msg" id="audioErrorMsg" style="display: none; color: #c9a227; margin-bottom: 0.5rem; font-size: 0.9rem;"></p>
-            <audio id="hinoAudio" preload="metadata">
-              <source src="audio/hino.mp3" type="audio/mpeg">
-              <source src="audio/hino.m4a" type="audio/mp4">
-            </audio>
-            <div class="audio-player">
-              <div class="audio-player-controls">
-                <button class="play-pause-btn" id="playPauseBtn" aria-label="Play/Pause" type="button">
-                  <span class="play-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M8 5v14l11-7z"/></svg>
-                  </span>
-                  <span class="pause-icon" style="display: none;" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
-                  </span>
-                </button>
-                <div class="volume-control">
-                  <span class="volume-icon" id="volumeIcon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" fill="currentColor"/>
-                    </svg>
-                  </span>
-                  <div class="volume-slider-wrapper">
-                    <div class="volume-slider-fill" id="volumeSliderFill"></div>
-                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.01" value="1" aria-label="Volume">
-                  </div>
-                </div>
-              </div>
-              <div class="progress-container">
-                <div class="progress-bar" id="progressBar">
-                  <div class="progress-fill" id="progressFill"></div>
-                  <div class="progress-handle" id="progressHandle"></div>
-                </div>
-                <div class="time-display">
-                  <span id="currentTime">0:00</span>
-                  <span id="duration">0:00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Footer -->
