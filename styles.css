@@ -1294,8 +1294,19 @@ body {
 
 .merch-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 2rem;
+}
+
+/* primeiros 2 ocupam metade cada */
+.merch-grid > *:nth-child(1),
+.merch-grid > *:nth-child(2) {
+  grid-column: span 3;
+}
+
+/* os 3 de baixo ocupam 1/3 cada */
+.merch-grid > *:nth-child(n+3) {
+  grid-column: span 2;
 }
 
 .merch-card {
@@ -1343,6 +1354,7 @@ body {
 }
 
 @media (max-width: 768px) {
+
   .merch-section {
     margin-top: 80px;
     padding: 1.5rem 0.75rem 3rem;
@@ -1357,8 +1369,33 @@ body {
     gap: 1.5rem;
   }
 
+  /* reset das colunas */
+  .merch-grid > * {
+    grid-column: span 1 !important;
+  }
+
+  /* quadrados iguais */
+  .merch-card {
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .merch-card {
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+  }
+  
   .merch-card-title {
-    font-size: 1.2rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem 0.5rem;
+    z-index: 2;
   }
 }
 
@@ -2409,4 +2446,10 @@ body {
     font-size: 18px;
   }
 }
-  
+
+/* Remover controlo de volume no mobile */
+@media (max-width: 768px) {
+  .volume-control {
+    display: none;
+  }
+}
