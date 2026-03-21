@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Merch - 24º Ciclo do Cenáculo</title>
+    <title>Fotos - 24º Ciclo do Cenáculo</title>
     <link rel="icon" type="image/png" sizes="32x32" href="imagens/cen.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="imagens/cen.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="imagens/cen.png" />
@@ -12,7 +12,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=MedievalSharp&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="page-merch">
+  <body class="page-fotos">
+    <div class="fotos-bg" aria-hidden="true">
+      <img src="imagens/fotos-back/1.png" alt="">
+      <img src="imagens/fotos-back/2.png" alt="">
+      <img src="imagens/fotos-back/3.png" alt="">
+    </div>
     <nav class="navbar">
       <div class="navbar-container">
         <a href="index.html" class="navbar-logo-link" aria-label="Ir para a página inicial">
@@ -24,13 +29,13 @@
             </div>
           </div>
         </a>
-        
+
         <button class="navbar-toggle" id="navbarToggle" aria-label="Toggle menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
-        
+
         <ul class="navbar-menu" id="navbarMenu">
           <li class="navbar-item">
             <a href="index.html" class="navbar-link">Início</a>
@@ -57,53 +62,47 @@
             <a href="forum.html" class="navbar-link">Fórum</a>
           </li>
           <li class="navbar-item">
-            <a href="fotos.html" class="navbar-link">Fotos</a>
+            <a href="fotos.html" class="navbar-link navbar-link-active">Fotos</a>
           </li>
         </ul>
       </div>
     </nav>
 
-    <section class="merch-section">
-      <div class="merch-container">
-        <h1 class="merch-page-title">Merch</h1>
-        <p class="merch-page-subtitle">24º Cenáculo de Barcelos</p>
+    <section class="fotos-section">
+      <div class="fotos-container">
+        <h1 class="fotos-page-title">Fotos</h1>
+        <p class="fotos-page-subtitle">24º Cenáculo de Barcelos</p>
 
-        <div class="merch-grid">
-          <article class="merch-card">
-            <div class="merch-card-image">
-              <img src="imagens/merch/sweat.png" alt="Sweat" onerror="this.src='imagens/cen.png';this.style.opacity='0.4';" />
-            </div>
-            <h2 class="merch-card-title">Sweat</h2>
-          </article>
-
-          <article class="merch-card">
-            <div class="merch-card-image">
-              <img src="imagens/merch/panama.png" alt="Panama" onerror="this.src='imagens/cen.png';this.style.opacity='0.4';" />
-            </div>
-            <h2 class="merch-card-title">Panama</h2>
-          </article>
-
-          <article class="merch-card">
-            <div class="merch-card-image">
-              <img src="imagens/merch/gola.png" alt="Gola" onerror="this.src='imagens/cen.png';this.style.opacity='0.4';" />
-            </div>
-            <h2 class="merch-card-title">Gola</h2>
-          </article>
-
-          <article class="merch-card">
-            <div class="merch-card-image">
-              <img src="imagens/merch/meias.png" alt="Pin" onerror="this.src='imagens/cen.png';this.style.opacity='0.4';" />
-            </div>
-            <h2 class="merch-card-title">Meias</h2>
-          </article>
-
-          <article class="merch-card">
-            <div class="merch-card-image">
-              <img src="imagens/merch/pin.png" alt="Pin" onerror="this.src='imagens/cen.png';this.style.opacity='0.4';" />
-            </div>
-            <h2 class="merch-card-title">Pin</h2>
-          </article>
+        <div class="fotos-intro">
+          <p class="fotos-intro-text">Revive os melhores momentos do 24º Ciclo do Cenáculo de Barcelos. Todas as fotografias da atividade estão disponíveis na nossa pasta partilhada.</p>
         </div>
+
+        <div class="fotos-drive-block">
+          <div class="fotos-drive-icon">
+            <svg width="56" height="56" viewBox="0 0 87.3 78" xmlns="http://www.w3.org/2000/svg">
+              <path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="#f7c66b" opacity="0.85"/>
+              <path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z" fill="#f7c66b" opacity="0.6"/>
+              <path d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z" fill="#f7c66b" opacity="0.85"/>
+              <path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="#f7c66b"/>
+              <path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#f7c66b" opacity="0.7"/>
+              <path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z" fill="#f7c66b" opacity="0.5"/>
+            </svg>
+          </div>
+          <h2 class="fotos-drive-title">Pasta de Fotografias</h2>
+          <p class="fotos-drive-desc">Acede à pasta completa com todas as fotos da atividade na Google Drive.</p>
+          <a href="LINK_DA_DRIVE_AQUI" class="fotos-drive-btn" target="_blank" rel="noopener noreferrer">
+            <span class="fotos-drive-btn-icon">
+              <!-- Ícone de pasta/abrir -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="15 3 21 3 21 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            Ver Fotos na Drive
+          </a>
+        </div>
+
       </div>
     </section>
 
