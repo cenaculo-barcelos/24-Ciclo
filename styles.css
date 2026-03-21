@@ -2594,6 +2594,7 @@ body.page-fotos {
     height: 100%;
     display: flex;
     flex-direction: column;
+    z-index: -1;
   }
 
   .fotos-bg img {
@@ -2606,11 +2607,24 @@ body.page-fotos {
 }
 
 
-body.page-fotos .navbar,
+body.page-fotos .navbar {
+  position: relative;
+  z-index: 1000;
+}
+
 body.page-fotos .fotos-section,
 body.page-fotos .site-footer {
   position: relative;
-  z-index: 2;
+  z-index: 1;
+}
+
+body.page-fotos .navbar-menu {
+  z-index: 9999;
+}
+
+body.page-fotos .navbar-toggle {
+  position: relative;
+  z-index: 10000;
 }
 
 .fotos-section {
